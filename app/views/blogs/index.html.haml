@@ -1,0 +1,29 @@
+%div.col-xs-12.post-index-head
+  = link_to "Index page", blogs_path, class: "btn btn-warning"
+
+%div.col-xs-12.col-sm-5.border-all-posts
+  %h3 Recent Tumblr Blog Posts
+  - @blogs.each do |blog|
+    %pre
+      %div.each-post
+        %div.each-title
+          = blog.title.to_s.html_safe
+        %div.each-body
+          = blog.body.to_s.html_safe
+        %div
+          - if blog.images
+            - blog.images.each do |image|
+              = image_tag(image["original_size"]["url"], class: "img img-responsive")
+        %div
+          - if blog.video
+            = video_tag("#{blog.video.html_safe}", class: "img img-responsive")
+        %div.each-caption
+          = blog.caption.to_s.html_safe
+        / %div.each-question
+        /   = blog.question.to_s.html_safe
+        %div.each-answer
+          = blog.answer.to_s.html_safe
+
+        / %div
+        /     = video_tag(video[][], class: "img img-responsive")
+
