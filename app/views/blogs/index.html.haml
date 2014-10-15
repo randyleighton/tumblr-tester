@@ -32,9 +32,12 @@
             = blog.player.last["embed_code"].to_s.html_safe
           -else
             = blog.player.to_s.html_safe
-      %div.each-body
-        = blog.title.to_s.html_safe
 
+      %div.each-title
+        %a{href: "#{blog.url.to_s.html_safe}", target: "_blank"}
+          = blog.title.to_s.html_safe
+      %div.each-body
+        = blog.description.to_s.html_safe
       %div.each-body
         = blog.body.to_s.html_safe
 
@@ -45,6 +48,9 @@
 
       %div.each-caption
         = blog.caption.to_s.html_safe
+      / %div.each-question
+      /   = blog.question.to_s.html_safe
+
       %div.each-answer
         = blog.answer.to_s.html_safe
 

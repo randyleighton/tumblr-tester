@@ -1,6 +1,6 @@
 class Blog
 
-attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id, :reblog_key, :permalink_url, :post_url
+attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id, :reblog_key, :permalink_url, :post_url, :description, :url
 
   def initialize(params)
     @title = params["title"]
@@ -13,6 +13,8 @@ attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id,
     @player = params["player"]
     @permalink_url = params["permalink_url"]
     @post_url = params["post_url"]
+    @description = params["description"]
+    @url = params["url"]
   end
 
   def self.all
@@ -23,7 +25,7 @@ attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id,
       blogs << Blog.new(blog_attributes)
     end
     blogs
-    binding.pry
+    # binding.pry
   end
 
 
