@@ -18,15 +18,13 @@
         %strong= u["user"]["following"].to_s.html_safe
 
 
+
+
+
 %div.col-xs-12.col-sm-5.border-all-posts
   %h3 Recent Tumblr Blog Posts
   - @blogs.each do |blog|
     %div.each-post
-      %div.each-title
-
-        = link_to "Reblog", "https://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}"
-        %a{data: {reblog: "https://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", id:blog.post_id}} Like
-
       %div.each-body
         - if blog.player
           %h3 Multimedia
@@ -37,20 +35,25 @@
 
       %div.each-body
         = blog.title.to_s.html_safe
+
       %div.each-body
         = blog.body.to_s.html_safe
+
       %div
         - if blog.images
           - blog.images.each do |image|
             = image_tag(image["original_size"]["url"], class: "img img-responsive")
+
       %div.each-caption
         = blog.caption.to_s.html_safe
       / %div.each-question
       /   = blog.question.to_s.html_safe
+
       %div.each-answer
         = blog.answer.to_s.html_safe
 
+      %a{href: "http://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", target: "_blank", title:"Reblog on Tumblr", style:"display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://assets.tumblr.com/images/iframe_reblog_alpha.png?4') top left no-repeat transparent;"} Reblog on Tumblr
 
-      / %div
-      /     = video_tag(video[][], class: "img img-responsive")
+      %script src="http://platform.tumblr.com/v1/share.js"
+
 
