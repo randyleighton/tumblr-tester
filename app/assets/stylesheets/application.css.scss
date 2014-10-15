@@ -23,3 +23,26 @@
 .avatar-style {
   width: 25px;
 }
+.share-btn {
+  margin: 10px 10px;
+}
+.each-post {
+  opacity: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #FFF;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f2f2f5;
+  border-radius: 3px;
+}
+.each-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.each-caption {
+  font-size: 100%
+}
+.each-body {
+  font-size: 1em;
+}

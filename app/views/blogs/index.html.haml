@@ -23,10 +23,7 @@
   - @blogs.each do |blog|
     %div.each-post
       %div.each-title
-
-        = link_to "Reblog", "https://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}"
-        %a{data: {reblog: "https://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", id:blog.post_id}} Like
-
+        = link_to image_tag("http://platform.tumblr.com/v1/share_3.png"), "https://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", target: "_blank", class: "share-btn"
       %div.each-body
         - if blog.player
           %h3 Multimedia
@@ -34,7 +31,6 @@
             = blog.player.last["embed_code"].to_s.html_safe
           -else
             = blog.player.to_s.html_safe
-
       %div.each-body
         = blog.title.to_s.html_safe
       %div.each-body
@@ -45,12 +41,5 @@
             = image_tag(image["original_size"]["url"], class: "img img-responsive")
       %div.each-caption
         = blog.caption.to_s.html_safe
-      / %div.each-question
-      /   = blog.question.to_s.html_safe
       %div.each-answer
         = blog.answer.to_s.html_safe
-
-
-      / %div
-      /     = video_tag(video[][], class: "img img-responsive")
-

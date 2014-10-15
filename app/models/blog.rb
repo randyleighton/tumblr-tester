@@ -22,7 +22,7 @@ attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id,
       blogs << Blog.new(blog_attributes)
     end
     blogs
-    # binding.pry
+    binding.pry
   end
 
 
