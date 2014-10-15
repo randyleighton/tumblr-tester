@@ -1,6 +1,6 @@
 class Blog
 
-attr_reader :title, :body, :type, :images, :caption, :video, :answer
+attr_reader :title, :body, :type, :images, :caption, :player, :answer, :post_id, :reblog_key, :permalink_url
 
   def initialize(params)
     @title = params["title"]
@@ -8,18 +8,22 @@ attr_reader :title, :body, :type, :images, :caption, :video, :answer
     @type = params["type"]
     @images = params["photos"] if params["photos"]
     @caption = params["caption"]
-    # @answer = answer_params
-    # binding.pry
-    @video = params["player"].first['embed_code'] if params["player"]
+    @reblog_key = params["reblog_key"]
+    @post_id = params["id"]
+    @player = params["player"]
+    @permalink_url = params["permalink_url"]
   end
 
   def self.all
     blogs = []
     client = Tumblr::Client.new
-    response = client.posts("houseofsoundradio.tumblr.com")
+    response = client.posts("houseofsoundpdx.tumblr.com")
     response["posts"].each do |blog_attributes|
       blogs << Blog.new(blog_attributes)
     end
     blogs
+    # binding.pry
   end
+
+
 end
