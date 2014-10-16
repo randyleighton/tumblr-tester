@@ -43,6 +43,10 @@
             %span #
             = t
 
+      - if blog.source_title
+        %div
+          =link_to ("via #{blog.source_title}"), blog.source_url
+
       %a{href: "http://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", class: "reblog-button", target: "_blank", title:"Reblog on Tumblr"} Reblog on Tumblr
 
       %script src="http://platform.tumblr.com/v1/share.js"

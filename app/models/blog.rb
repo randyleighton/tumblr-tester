@@ -1,6 +1,6 @@
 class Blog
 
-attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer, :post_id, :reblog_key, :permalink_url, :post_url, :description, :url, :tags, :asking_name
+attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer, :post_id, :reblog_key, :permalink_url, :post_url, :description, :url, :tags, :asking_name, :source_url, :source_title
 
   def initialize(params)
     @title = params["title"]
@@ -19,12 +19,14 @@ attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer
     @question = params["question"]
     @answer = params["answer"]
     @asking_name = params["asking_name"]
+    @source_url = params["source_url"]
+    @source_title = params["source_title"]
   end
 
   def self.all
     blogs = []
     client = Tumblr::Client.new
-    response = client.posts("houseofsoundpdx.tumblr.com")
+    response = client.posts("houseofsoundradio.tumblr.com")
     response["posts"].each do |blog_attributes|
       blogs << Blog.new(blog_attributes)
     end
