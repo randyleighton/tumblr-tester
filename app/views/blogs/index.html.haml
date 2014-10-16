@@ -5,12 +5,14 @@
 %div.col-xs-6
   - @blogs.each do |blog|
     %div.each-post.shadow
-      %div.each-body
-        - if blog.player
-          -if blog.player.last["embed_code"]
-            = blog.player.last["embed_code"].to_s.html_safe
-          -else
-            = blog.player.to_s.html_safe
+
+      -if blog.type =="audio" || blog.type == "video"
+        %div.each-body
+          - if blog.player
+            -if blog.player.last["embed_code"]
+              = blog.player.last["embed_code"].to_s.html_safe
+            -else
+              = blog.player.to_s.html_safe
 
       - if blog.type == "link"
         %div.each-title
@@ -29,22 +31,23 @@
           = blog.text.to_s.html_safe
           = blog.source.to_s.html_safe
 
-      %div.each-body
-        - if blog.images
-          - blog.images.each do |image|
-            = image_tag(image["original_size"]["url"], class: "img img-responsive image-frame image-style")
+      - if blog.type == "photo"
+        %div.each-caption
+          = blog.caption.to_s.html_safe
+        %div.each-body
+          - if blog.images
+            - blog.images.each do |image|
+              = image_tag(image["original_size"]["url"], class: "img img-responsive image-frame image-style")
 
-      %div.each-caption
-        = blog.caption.to_s.html_safe
-
-      %div.each-body
-        - if blog.question
-          %div= blog.question.to_s.html_safe
-          %div.asked-by
-            Asked by
-            = blog.asking_name.to_s.html_safe
-          %div.each-body
-            = blog.answer.to_s.html_safe
+      -if blog.type == "answer"
+        %div.each-body
+          - if blog.question
+            %div= blog.question.to_s.html_safe
+            %div.asked-by
+              Asked by
+              = blog.asking_name.to_s.html_safe
+            %div.each-body
+              = blog.answer.to_s.html_safe
 
       - if blog.tags != []
         %hr.ruler-color.shadow
