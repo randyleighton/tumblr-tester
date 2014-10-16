@@ -1,63 +1,44 @@
+%div.col-xs-3
+  = image_tag("tumblr.png", class: "img img-responsive t-logo")
+  = image_tag("houseofsound_header.png", class: "img img-responsive t-logo")
 
-%div.col-xs-12
-  %div.col-xs-12.post-index-head
-    = link_to "Index page", blogs_path, class: "btn btn-warning"
-  %div.col-xs-12
-    %h3 Users
-    - @users.each do |u|
-      %div.each-post
-        %img{src: "http://api.tumblr.com/v2/blog/#{u["user"]["blogs"].first["name"]}.tumblr.com/avatar/128", class: "avatar-style" }
+%div.col-xs-6
+  - @blogs.each do |blog|
+    %div.each-post.shadow
+      %div.each-body
+        - if blog.player
+          -if blog.player.last["embed_code"]
+            = blog.player.last["embed_code"].to_s.html_safe
+          -else
+            = blog.player.to_s.html_safe
+
+      %div.each-title
+        %a{href: "#{blog.url.to_s.html_safe}", target: "_blank"}
+          = blog.title.to_s.html_safe
+      %div.each-body
+        = blog.description.to_s.html_safe
+      %div.each-body
+        = blog.body.to_s.html_safe
+
+      %div.each-title
+        - if blog.images
+          - blog.images.each do |image|
+            = image_tag(image["original_size"]["url"], class: "img img-responsive image-frame")
+
+      %div.each-caption
+        = blog.caption.to_s.html_safe
+      %div.each-body
+        = blog.answer.to_s.html_safe
+
+      - if blog.tags != []
+        %hr.ruler-color.shadow
         %div.each-body
-          Name:
-          %strong= u["user"]["name"].to_s.html_safe
-        %div.each-body
-          Number of Likes:
-          %strong= u["user"]["likes"].to_s.html_safe
-        %div.each-body
-          Following:
-          %strong= u["user"]["following"].to_s.html_safe
+          - blog.tags.each do |t|
+            %span #
+            = t
 
-%div.post-holder
-  %div.col-xs-3
-  %div.col-xs-12.col-sm-6
-    %div.each-title
-      = image_tag("tumblr.png", class: "img img-responsive t-logo")
-    - @blogs.each do |blog|
-      %div.each-post
-        %div.each-body
-          - if blog.player
-            -if blog.player.last["embed_code"]
-              = blog.player.last["embed_code"].to_s.html_safe
-            -else
-              = blog.player.to_s.html_safe
+      %a{href: "http://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", target: "_blank", title:"Reblog on Tumblr", style:"display:inline-block; text-indent:-9999px; margin: 3px 0px; overflow:hidden; width:129px; height:20px; background:url('http://assets.tumblr.com/images/iframe_reblog_alpha.png?4') top left no-repeat transparent;"} Reblog on Tumblr
 
-        %div.each-title
-          %a{href: "#{blog.url.to_s.html_safe}", target: "_blank"}
-            = blog.title.to_s.html_safe
-        %div.each-body
-          = blog.description.to_s.html_safe
-        %div.each-body
-          = blog.body.to_s.html_safe
-
-        %div.each-title
-          - if blog.images
-            - blog.images.each do |image|
-              = image_tag(image["original_size"]["url"], class: "img img-responsive img-thumbnail")
-
-        %div.each-caption
-          = blog.caption.to_s.html_safe
-        %div.each-body
-          = blog.answer.to_s.html_safe
-
-        - if blog.tags != []
-          %hr.ruler-color
-          %div.each-body
-            - blog.tags.each do |t|
-              %span #
-              = t
-
-        %a{href: "http://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", target: "_blank", title:"Reblog on Tumblr", style:"display:inline-block; text-indent:-9999px; margin: 3px 0px; overflow:hidden; width:129px; height:20px; background:url('http://assets.tumblr.com/images/iframe_reblog_alpha.png?4') top left no-repeat transparent;"} Reblog on Tumblr
-
-        %script src="http://platform.tumblr.com/v1/share.js"
-  %div.col-xs-2
+      %script src="http://platform.tumblr.com/v1/share.js"
+%div.col-xs-3
 

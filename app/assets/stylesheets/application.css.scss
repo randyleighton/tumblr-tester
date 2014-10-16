@@ -32,19 +32,19 @@ h1, h2, h3, h4, h5 {
   width: 25px;
 }
 .share-btn {
-  margin: 10px 10px;
+  margin: 15px 10px;
 }
 .post-holder {
   background-color: #CCB299;
 }
 .each-post {
+  margin: 2px;
   opacity: 1;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 10px;
   background-color: #CCB299;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
-  border-color: #f2f2f5;
+  border-color: #996633;
   border-radius: 3px;
 }
 .each-title {
@@ -66,11 +66,23 @@ h1, h2, h3, h4, h5 {
   font-size: 1em;
 }
 .ruler-color {
-  border-color: #2ca5de;
+  border-color: #CCB299;
   border-width: 1.5px;
   margin-bottom: 3px;
 }
 .t-logo {
-  width:200px;
+  display: block;
+  margin: 0px auto;
+  height: 100px;
 }
+.shadow {
+  -moz-box-shadow:    .5px .5px 1px 1px #996633;
+  -webkit-box-shadow: .5px .5px 1px 1px #996633;
+  box-shadow:         .5px .5px 1px 1px #996633;
+}
+.image-frame {
+  border: 1px solid #996633;
+  border-radius: 5px;
+}
+
 
