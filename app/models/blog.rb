@@ -1,6 +1,6 @@
 class Blog
 
-attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer, :post_id, :reblog_key, :permalink_url, :post_url, :description, :url, :tags, :asking_name, :source_url, :source_title
+attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer, :post_id, :reblog_key, :permalink_url, :post_url, :description, :url, :tags, :asking_name, :source_url, :source_title, :text, :source
 
   def initialize(params)
     @title = params["title"]
@@ -21,6 +21,8 @@ attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer
     @asking_name = params["asking_name"]
     @source_url = params["source_url"]
     @source_title = params["source_title"]
+    @text = params["text"]
+    @source = params["source"]
   end
 
   def self.all
@@ -32,6 +34,8 @@ attr_reader :title, :body, :type, :images, :caption, :player, :question, :answer
     end
     blogs
   end
+
+
 
 
 end

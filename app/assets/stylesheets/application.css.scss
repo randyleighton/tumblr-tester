@@ -17,7 +17,7 @@
 @import "bootstrap";
 
 html {
-  background-image: url(image-path('cork.png'));
+  background-image: url(image-path('wood.jpeg'));
 
 }
 h1, h2, h3, h4, h5 {
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5 {
   border-radius: 3px;
 }
 .each-title {
-  font-size: 1.1em;
+  font-size: 2.3em;
   font-weight: bold;
 }
 .each-title img {
@@ -75,6 +75,11 @@ h1, h2, h3, h4, h5 {
   margin: 0px auto;
   height: 100px;
 }
+.image-style {
+  display: block;
+  margin: 0px auto;
+}
+
 .shadow {
   -moz-box-shadow:    .5px .5px 1px 1px #996633;
   -webkit-box-shadow: .5px .5px 1px 1px #996633;

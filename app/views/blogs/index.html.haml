@@ -12,21 +12,31 @@
           -else
             = blog.player.to_s.html_safe
 
-      %div.each-title
-        %a{href: "#{blog.url.to_s.html_safe}", target: "_blank"}
-          = blog.title.to_s.html_safe
-      %div.each-body
-        = blog.description.to_s.html_safe
-      %div.each-body
-        = blog.body.to_s.html_safe
+      - if blog.type == "link"
+        %div.each-title
+          = link_to "#{blog.title.to_s.html_safe}", "#{blog.url.to_s.html_safe}", target: "_blank"
+        %div.each-body
+          = blog.description.to_s.html_safe
 
-      %div.each-title
+      - if blog.type == "text"
+        %div.each-title
+          = blog.title.to_s.html_safe
+        %div.each-body
+          = blog.body.to_s.html_safe
+
+      - if blog.type == "quote"
+        %div.each.body
+          = blog.text.to_s.html_safe
+          = blog.source.to_s.html_safe
+
+      %div.each-body
         - if blog.images
           - blog.images.each do |image|
-            = image_tag(image["original_size"]["url"], class: "img img-responsive image-frame")
+            = image_tag(image["original_size"]["url"], class: "img img-responsive image-frame image-style")
 
       %div.each-caption
         = blog.caption.to_s.html_safe
+
       %div.each-body
         - if blog.question
           %div= blog.question.to_s.html_safe
@@ -50,5 +60,5 @@
       %a{href: "http://www.tumblr.com/reblog/#{blog.post_id}/#{blog.reblog_key}", class: "reblog-button", target: "_blank", title:"Reblog on Tumblr"} Reblog on Tumblr
 
       %script src="http://platform.tumblr.com/v1/share.js"
-%div.col-xs-3
+
 
