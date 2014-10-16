@@ -24,19 +24,19 @@ h1, h2, h3, h4, h5 {
   color: #FFF;
 }
 
-.boldy {
-  font-weight: bolder;
+.asked-by {
+  display: block;
+  text-align: right;
 }
 
 .avatar-style {
   width: 25px;
 }
-.share-btn {
-  margin: 15px 10px;
+
+.boldy {
+  font-weight: bolder;
 }
-.post-holder {
-  background-color: #CCB299;
-}
+
 .each-post {
   margin: 2px;
   opacity: 1;
@@ -47,48 +47,43 @@ h1, h2, h3, h4, h5 {
   border-color: #996633;
   border-radius: 3px;
 }
+
 .each-title {
   font-size: 2.3em;
   font-weight: bold;
 }
+
 .each-title img {
   display: block;
   margin: 0 auto;
   align: center;
   max-width: 100%
 }
+
 .each-caption {
   font-size: 100%
 }
+
 .each-body {
   display: block;
   margin: 0 auto;
   font-size: 1em;
 }
-.ruler-color {
-  border-color: #CCB299;
-  border-width: 1.5px;
-  margin-bottom: 3px;
-}
-.t-logo {
-  display: block;
-  margin: 0px auto;
-  height: 100px;
-}
+
 .image-style {
   display: block;
   margin: 0px auto;
 }
 
-.shadow {
-  -moz-box-shadow:    .5px .5px 1px 1px #996633;
-  -webkit-box-shadow: .5px .5px 1px 1px #996633;
-  box-shadow:         .5px .5px 1px 1px #996633;
-}
 .image-frame {
   border: 1px solid #996633;
   border-radius: 5px;
 }
+
+.post-holder {
+  background-color: #CCB299;
+}
+
 .reblog-button {
   display:inline-block;
   text-indent:-9999px;
@@ -98,7 +93,25 @@ h1, h2, h3, h4, h5 {
   height:20px;
   background:url('http://assets.tumblr.com/images/iframe_reblog_alpha.png?4') no-repeat transparent;
 }
-.asked-by {
+
+.ruler-color {
+  border-color: #CCB299;
+  border-width: 1.5px;
+  margin-bottom: 3px;
+}
+
+.shadow {
+  -moz-box-shadow:    .5px .5px 1px 1px #996633;
+  -webkit-box-shadow: .5px .5px 1px 1px #996633;
+  box-shadow:         .5px .5px 1px 1px #996633;
+}
+
+.share-btn {
+  margin: 15px 10px;
+}
+
+.t-logo {
   display: block;
-  text-align: right;
+  margin: 0px auto;
+  height: 100px;
 }
