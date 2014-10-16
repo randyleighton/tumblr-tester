@@ -16,6 +16,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+  background-image: url(image-path('cork.png'));
+
+}
+h1, h2, h3, h4, h5 {
+  color: #FFF;
+}
+
 .boldy {
   font-weight: bolder;
 }
@@ -26,11 +34,14 @@
 .share-btn {
   margin: 10px 10px;
 }
+.post-holder {
+  background-color: #CCB299;
+}
 .each-post {
   opacity: 1;
   padding-left: 5px;
   padding-right: 5px;
-  background-color: #FFF;
+  background-color: #CCB299;
   border-width: 1px;
   border-style: solid;
   border-color: #f2f2f5;
@@ -40,10 +51,18 @@
   font-size: 1.1em;
   font-weight: bold;
 }
+.each-title img {
+  display: block;
+  margin: 0 auto;
+  align: center;
+  max-width: 100%
+}
 .each-caption {
   font-size: 100%
 }
 .each-body {
+  display: block;
+  margin: 0 auto;
   font-size: 1em;
 }
 .ruler-color {
@@ -51,3 +70,7 @@
   border-width: 1.5px;
   margin-bottom: 3px;
 }
+.t-logo {
+  width:200px;
+}
+
