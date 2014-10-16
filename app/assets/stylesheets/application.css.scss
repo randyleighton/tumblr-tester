@@ -84,5 +84,16 @@ h1, h2, h3, h4, h5 {
   border: 1px solid #996633;
   border-radius: 5px;
 }
-
-
+.reblog-button {
+  display:inline-block;
+  text-indent:-9999px;
+  margin: 3px 0px;
+  overflow:hidden;
+  width:129px;
+  height:20px;
+  background:url('http://assets.tumblr.com/images/iframe_reblog_alpha.png?4') no-repeat transparent;
+}
+.asked-by {
+  display: block;
+  text-align: right;
+}
