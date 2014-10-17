@@ -16,14 +16,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-html {
-  background-image: url(image-path('wood.jpeg'));
-
-}
-h1, h2, h3, h4, h5 {
-  color: #FFF;
-}
-
 .asked-by {
   display: block;
   text-align: right;
@@ -33,15 +25,11 @@ h1, h2, h3, h4, h5 {
   width: 25px;
 }
 
-.boldy {
-  font-weight: bolder;
-}
-
 .each-post {
   margin: 2px;
   opacity: 1;
   padding: 10px;
-  background-color: #CCB299;
+  // background-color:rgba(4, 33, 51, .6);
   border-width: 2px;
   border-style: solid;
   border-color: #996633;
@@ -78,10 +66,6 @@ h1, h2, h3, h4, h5 {
 .image-frame {
   border: 1px solid #996633;
   border-radius: 5px;
-}
-
-.post-holder {
-  background-color: #CCB299;
 }
 
 .reblog-button {

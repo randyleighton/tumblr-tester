@@ -1,0 +1,94 @@
+
+body {
+  background-image:url('hos_bg_check.jpg');
+  background-repeat:no-repeat;
+  background-position: top left;
+  background-color: #000000;
+  background-size:cover;
+  color: #FFFFFF;
+  font-family: 'Francois One', Arial, sans-serif;
+}
+
+h2 {
+  margin-top:10px;
+}
+
+.box	{
+	background:rgba(4, 33, 51, .6);
+}
+
+.container {
+  background-color:rgba(0,0,0,.3);
+  min-height: 90%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px;
+  padding-bottom: 40px;
+}
+
+#logo {
+  margin-top:10px;
+}
+
+a:link {color:#FFFFFF; text-decoration: none;}
+a:visited {color:#FFFFFF; text-decoration: none;}
+a:hover {color:#5EACDF; text-decoration: none;}
+a:active {color:#FFFFFF; text-decoration: none;}
+
+.tumblr {
+  height:800px;
+  overflow:auto;
+}
+
+#contactdj {
+  text-align:center;
+  margin-bottom:0px;
+}
+
+.titlebox {
+  padding-top:6px;
+  padding-bottom:6px;
+  background-color:#2CA5DE;
+  font-size:22px;
+}
+
+.titlebox a:hover {
+  color:white;
+}
+
+.titlebox h3 {
+  margin-top:6px;
+}
+
+#listennow {
+  margin-bottom:30px;
+  margin-top:20px;
+}
+
+#listennow a {
+  width:70%;
+  margin:auto;
+  display:block;
+  font-size:2em;
+}
+
+#offair, #onair {
+  padding-left:5px;
+  padding-right:5px;
+}
+
+#offair img, #onair img {
+  width:160px;
+}
+
+#donate {
+  margin-top:30px;
+}
+
+span.red {
+  color:#ef0304;
+}
+
+span.big {
+  font-size:28px;
+}
